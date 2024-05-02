@@ -190,9 +190,9 @@ Here are all the supported functions.
 | `threadTasker.addTask`         | Adds a new task to the execution queue. This function allows you to add a new task to be processed by the workers.                                          |
 | `threadTasker.run`             | Initiates the execution of the tasker                 |
 | `threadTasker.queue.delete`    | Removes a specific task from the execution queue. This function allows you to delete a task from the queue based on its ID.                                   |
-| `threadTasker.queue.empty`     | Checks if the execution queue is empty. Returns `true` if the queue is empty and `false` if there are tasks in the queue waiting for execution.           |
-| `threadTasker.queue.getItemById`| Gets a specific task from the execution queue based on its ID. Returns the corresponding task if found, or `undefined` if not found.                      |
-| `threadTasker.queue.size`      | Returns the total number of tasks in the execution queue. This function provides the current size of the queue, indicating how many tasks are waiting for execution. |
+| `threadTasker.queue.empty`     | Checks if the execution queue is empty. Returns `true` otherwise `false`|
+| `threadTasker.queue.getItemById`| Gets a specific task pending from the execution queue based on its ID. Returns the corresponding task if found, or `undefined` if not found.                      |
+| `threadTasker.queue.size`      | Returns the total number of tasks in the execution queue. |
 
 
 ## Supported events:
