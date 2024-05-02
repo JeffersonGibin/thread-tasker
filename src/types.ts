@@ -58,7 +58,7 @@ export interface ThreadTaskerOutput {
    * @param name The name of the event to listen for.
    * @param fn The function to be executed when the event occurs.
    */
-  on: (name: EventType | string, fn: (data: Omit<IDataEvent, "fn">) => void) => void;
+  on: (name: EventType, fn: (data: Omit<IDataEvent, "fn">) => void) => void;
 
   /**
    * Method to add a task to the execution queue.
@@ -89,13 +89,13 @@ export interface ThreadTaskerOutput {
      * Method to delete a task from the queue.
      * @returns A boolean indicating if the task was successfully deleted.
      */
-    delete: () => boolean;
+    delete: (id: string) => boolean;
 
     /**
      * Method to get a task from the queue.
      * @returns A boolean indicating if the task was successfully deleted.
      */
-    getItemById: (id: string) => ITaskerQueue;
+    getItemById: (id: string) => Omit<ITaskerQueue, "fn">;
   };
 }
 
