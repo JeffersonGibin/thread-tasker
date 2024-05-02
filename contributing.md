@@ -26,12 +26,12 @@ Before you start coding consider the following definitions.
 - Urgent fixes: `hotfix/<your-urgent-fixes>` urgent bug fixes
 
   ```shell
-  -> express-rate-limiter-core git:(main): git checkout -b <prefix>/<your-definition-name>
+  -> thread-tasker git:(main): git checkout -b <prefix>/<your-definition-name>
   ```
 
 
 ## End
 
-If you have any questions feel free to open a discussion [here](https://github.com/JeffersonGibin/express-rate-limiter-core/discussions/new).
+If you have any questions feel free to open a discussion [here](https://github.com/JeffersonGibin/thread-tasker/discussions/new).
 
 **It's just for now. Thank you for your interest in contributing to this repository.**

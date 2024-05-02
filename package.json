@@ -1,14 +1,14 @@
 {
   "name": "thread-tasker",
   "author": "Jefferson Gibin",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "Provides an easy-to-use middleware for rate-limiting requests to an Express server",
   "main": "lib/index.js",
   "module": "lib/index.m.js",
   "unpkg": "lib/index.umd.js",
   "types": "lib/index.d.ts",
   "scripts": {
-    "build": "tsc --watch",
+    "build": "tsc",
     "start": "node ./lib/index.js",
     "lint": "eslint --ext .ts .",
     "unit:test": "jest --maxWorkers 2 .",
@@ -24,8 +24,16 @@
   },
   "homepage": "https://github.com/JeffersonGibin/thread-tasker#readme",
   "keywords": [
-    "rate limit"
-  ],
+    "multithreading",
+    "async task management",
+    "concurrency control",
+    "task queue system",
+    "asynchronous programming",
+    "retry logic",
+    "efficient task execution",
+    "worker pool management"
+]
+,
   "license": "MIT",
   "dependencies": {
     "uuid": "^9.0.1"
