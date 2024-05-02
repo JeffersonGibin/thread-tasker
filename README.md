@@ -44,22 +44,29 @@ const threadTasker = ThreadTasker({
 
 // Add a heavy task to the task queue
 threadTasker.addTask("task-1", (taskId) => {
-  console.log(taskId);
+  console.log("taskId", taskId);
 
   // Define the number of iterations
   const iterations = 1000000000; // 1 billion
 
-  // Variable to store the result of the processing
   let result = 0;
 
   // Loop to perform the heavy processing
   for (let i = 0; i < iterations; i++) {
-    result += Math.random(); // Perform a simple operation to simulate the processing
+    result += 1;
   }
+
+  //   throw new Error("This emit failure");
+  //   return Promise.reject("This emit failure");
 
   // Return the result of the processing
   return result;
 });
+
+threadTasker.addTask("task-2", (taskId) => {
+  return { projectName: 'Thread Tasker'};
+});
+
 
 // Events to manage the queue
 // const item = threadTasker.queue.getItemById("1");
@@ -70,31 +77,78 @@ threadTasker.addTask("task-1", (taskId) => {
 // When the task is added to the queue
 threadTasker.on("pending", (data) => {
   console.log("Pending task data", data);
+  // Output Event
+  //   {
+  //   id: '581c4bdb-baeb-4a20-bc86-e1628170c1e1',
+  //   name: 'task-1',
+  //   status: 'pending',
+  //   emitedAt: 2024-05-02T20:08:21.314Z
+  // }
 });
 
 // When a task starts being executed
 threadTasker.on("inprogress", (data) => {
   console.log("In progress task data", data);
+
+    // Output Event
+    //  {
+    //   id: '581c4bdb-baeb-4a20-bc86-e1628170c1e1',
+    //   status: 'in_progress',
+    //   emitedAt: 2024-05-02T20:08:23.323Z,
+    //   workerId: '1'
+    // }
 });
 
 // When a task is successfully completed
 threadTasker.on("completed", (data) => {
   console.log("Completed task data", data);
+
+  // Output Event
+  //   {
+  //   id: 'fab31e30-4c7e-41bb-a230-437867c4db63',
+  //   status: 'completed',
+  //   emitedAt: 2024-05-02T19:55:39.501Z,
+  //   result: undefined,
+  //   workerId: '1'
+  // }
+
 });
 
 // When an execution failure occurs
-threadTasker.on("fail", (data) => {
+threadTasker.on("failure", (data) => {
   console.log("Failed task data", data);
+
+  // Output Event
+  // {
+  //   id: '581c4bdb-baeb-4a20-bc86-e1628170c1e1',
+  //   status: 'fail',
+  //   emitedAt: 2024-05-02T20:08:26.333Z,
+  //   error: 'Failed to execute function after maximum attempts',
+  //   workerId: '1'
+  // }
+
 });
 
 // When any non-Worker error occurs
 threadTasker.on("error", (data) => {
   console.log("Error task data", data);
+  // Output Event
+  // { emitedAt: 2024-05-02T19:52:38.337Z, workerId: '1' }
 });
 
 // Will be executed according to the number of retries
 threadTasker.on("retryerror", (data) => {
   console.log("Retry error task data", data);
+
+  // Output Event
+  //  {
+  //   id: 'b046d935-c354-4938-b085-7db273075173',
+  //   status: 'retry_error',
+  //   emitedAt: 2024-05-02T19:57:53.947Z,
+  //   attempt: 1,
+  //   maxAttempt: 3,
+  //   workerId: '1'
+  // }
 });
 
 /**
@@ -116,7 +170,7 @@ Here are all the supported configurations.
 | `retry`             | Object containing settings for retrying tasks that failed during execution.                    | object   | -       |
 | `retry.maxAttempt`  | Maximum number of retry attempts for a task that failed.                                        | number   | 3       |
 | `retry.timeout`     | Time in milliseconds to wait between retry attempts.                                             | number   | 10000   |
-| `fetchTasksInterval`| Interval between attempts to fetch new tasks from the queue, in milliseconds.                    | number   | 1000    |
+| `fetchTasksInterval`| Interval between attempts to fetch new tasks from the queue, in milliseconds.          fail         | number   | 1000    |
 
 
 
@@ -141,7 +195,7 @@ Here are all the supported events.
 | Event Type  | Description                                                                                                              |
 |-------------|--------------------------------------------------------------------------------------------------------------------------|
 | `pending`     | Indicates that the task is pending execution.                                                                             |
-| `fail`        | Indicates that the task failed during execution.                                                                          |
+| `failure`        | Indicates that the task failed during execution.                                                                          |
 | `completed`   | Indicates that the task has been successfully completed.                                                                 |
 | `in_progress` | Indicates that the task is currently in progress, meaning it's being executed at the moment.                              |
 | `retry_error` | Indicates that an error occurred during the retry attempt of the task. Typically occurs after multiple execution failures. |
