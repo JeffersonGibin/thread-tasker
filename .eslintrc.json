@@ -1,0 +1,30 @@
+{
+  "env": {
+    "es6": true,
+    "node": true
+  },
+  "extends": [
+    "eslint:recommended",
+    "plugin:import/errors",
+    "plugin:import/warnings",
+    "plugin:import/typescript",
+    "plugin:@typescript-eslint/recommended"
+  ],
+  "ignorePatterns": ["/lib/**/*", "package.json"],
+  "overrides": [],
+  "parserOptions": {
+    "sourceType": "module"
+  },
+  "parser": "@typescript-eslint/parser",
+  "rules": {
+    "quotes": ["error", "double"],
+    "no-console": "error",
+    "arrow-spacing": "error",
+    "no-duplicate-imports": "error",
+
+    "camelcase": [
+      "error",
+      { "properties": "always", "ignoreDestructuring": true, "allow": ["_"] }
+    ]
+  }
+}
