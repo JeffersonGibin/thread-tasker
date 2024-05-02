@@ -24,8 +24,16 @@
   },
   "homepage": "https://github.com/JeffersonGibin/thread-tasker#readme",
   "keywords": [
-    "rate limit"
-  ],
+    "multithreading",
+    "async task management",
+    "concurrency control",
+    "task queue system",
+    "asynchronous programming",
+    "retry logic",
+    "efficient task execution",
+    "worker pool management"
+]
+,
   "license": "MIT",
   "dependencies": {
     "uuid": "^9.0.1"
