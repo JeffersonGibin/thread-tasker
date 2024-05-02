@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 export type EventType = "pending" | "fail" | "completed" | "inprogress" | "retryerror" | "error";
 
 export type TaskStatus = "pending" | "fail" | "completed" | "in_progress" | "retry_error" | "error";
@@ -114,6 +115,12 @@ export interface IRetry {
 }
 
 export interface ISettings {
+  /**
+   * Interval between attempts to fetch new tasks from the queue, in milliseconds
+   * @default 1000
+   */
+  fetchTasksInterval?: number;
+
   /**
    * The maximum number of workers that can be executed simultaneously.
    * @default 2

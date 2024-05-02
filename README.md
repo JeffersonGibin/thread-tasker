@@ -27,6 +27,8 @@ import { ThreadTasker } from "thread-tasker";
 
 // Initialize ThreadTasker with configurations
 const threadTasker = ThreadTasker({
+   fetchTasksInterval: 2000,
+
   // Maximum number of workers for task execution.
   maxWorkers: 2,
 
@@ -101,19 +103,26 @@ threadTasker.on("retryerror", (data) => {
 threadTasker.run();
 ```
 
+
+
 ## Supported configurations:
 
-| Parameter    | Description                                                                                     | Type     | Default |
-|--------------|-------------------------------------------------------------------------------------------------|----------|---------|
-| `maxWorkers`   | Maximum number of workers that can be executed simultaneously.                                 | number   | 1       |
-| `retry`        | Object containing settings for retrying tasks that failed during execution.                    | object   | -       |
-| `retry.maxAttempt` | Maximum number of retry attempts for a task that failed.                                        | number   | 3       |
-| `retry.timeout`    | Time in milliseconds to wait between retry attempts.                                             | number   | 10000   |
+Here are all the supported configurations.
 
-A seguir está todas as funções suportadas
+
+| Parameter           | Description                                                                                     | Type     | Default |
+|---------------------|-------------------------------------------------------------------------------------------------|----------|---------|
+| `maxWorkers`        | Maximum number of workers that can be executed simultaneously.                                 | number   | 1       |
+| `retry`             | Object containing settings for retrying tasks that failed during execution.                    | object   | -       |
+| `retry.maxAttempt`  | Maximum number of retry attempts for a task that failed.                                        | number   | 3       |
+| `retry.timeout`     | Time in milliseconds to wait between retry attempts.                                             | number   | 10000   |
+| `fetchTasksInterval`| Interval between attempts to fetch new tasks from the queue, in milliseconds.                    | number   | 1000    |
+
+
 
 ## Supported functions:
 
+Here are all the supported functions.
 
 | Function                       | Description                                                                                                                                                  |
 |--------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -126,6 +135,8 @@ A seguir está todas as funções suportadas
 
 
 ## Supported events:
+
+Here are all the supported events.
 
 | Event Type  | Description                                                                                                              |
 |-------------|--------------------------------------------------------------------------------------------------------------------------|

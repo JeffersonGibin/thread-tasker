@@ -10,7 +10,7 @@
     "plugin:import/typescript",
     "plugin:@typescript-eslint/recommended"
   ],
-  "ignorePatterns": ["/lib/**/*", "package.json", "src/interfaces/*"],
+  "ignorePatterns": ["/lib/**/*", "package.json"],
   "overrides": [],
   "parserOptions": {
     "sourceType": "module"
@@ -25,15 +25,6 @@
     "camelcase": [
       "error",
       { "properties": "always", "ignoreDestructuring": true, "allow": ["_"] }
-    ],
-    "no-unused-vars": [
-      "error",
-      { 
-        "varsIgnorePattern": "^_",
-        "argsIgnorePattern": "^_",
-        "caughtErrorsIgnorePattern": "^_",
-        "typesIgnorePattern": "^_" 
-      }
     ]
   }
 }

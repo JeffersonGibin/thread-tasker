@@ -1,5 +1,3 @@
-/* eslint-disable no-unused-vars */
-
 import { ISettings, WorkerStatus } from "../types";
 import { Worker, isMainThread } from "worker_threads";
 

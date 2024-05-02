@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { IDataEvent, ISettings } from "../types";
 import { parentPort, workerData } from "worker_threads";
 import { DEFAULT_MAX_RETRY_ATTEMPTS, DEFAULT_TIMEOUT_RETRY_SLEEP } from "../Utils/constants";

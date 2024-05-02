@@ -1,6 +1,6 @@
 import { TaskManager } from "./Task/task-manager";
 import { WorkerManager } from "./Worker/worker-manager";
-import { DEFAULT_MAX_WORKERS } from "./Utils/constants";
+import { DEFAULT_MAX_WORKERS, FETCH_INTERVAL_MILLISECONDS } from "./Utils/constants";
 import { eventEmitter, queue } from "./memory-instance";
 import { EventType, IDataEvent, ISettings, ThreadTaskerOutput } from "./types";
 import { isGreaterThanZero } from "./Utils/Number.utils";
@@ -23,6 +23,7 @@ export const ThreadTasker = (settings: ISettings): ThreadTaskerOutput => {
   const workerManager = new WorkerManager(`${currentDir}/Worker/worker.js`, {
     ...settings,
     maxWorkers: settings?.maxWorkers ?? DEFAULT_MAX_WORKERS,
+    fetchTasksInterval: settings?.fetchTasksInterval ?? FETCH_INTERVAL_MILLISECONDS,
   });
 
   return {

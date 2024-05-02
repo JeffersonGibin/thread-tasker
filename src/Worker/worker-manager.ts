@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 import { Worker } from "worker_threads";
 import { IWorkerPool, WorkerPool } from "./worker-pool";
 import { eventEmitter, queue } from "../memory-instance";
@@ -6,7 +7,6 @@ import { statusToEventMapper } from "../Utils/events-mapper.utils";
 
 export class WorkerManager extends WorkerPool {
   constructor(
-    // eslint-disable-next-line no-unused-vars
     readonly workerPath: string,
     readonly settings: ISettings
   ) {
@@ -15,7 +15,7 @@ export class WorkerManager extends WorkerPool {
 
   public async execute() {
     this.registryWorkers();
-    setInterval(() => this.executeWorker(), 1000);
+    setInterval(() => this.executeWorker(), this.settings?.fetchTasksInterval);
   }
 
   /**
@@ -104,6 +104,7 @@ export class WorkerManager extends WorkerPool {
 
   private async executeWorker(): Promise<void> {
     if (queue.isEmpty()) {
+      return;
     }
 
     for (const item of Object.values(this.getWorkers())) {
