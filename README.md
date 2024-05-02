@@ -1,12 +1,19 @@
-# <div align="center">Thread Tasker</div>
+
 
 <div align="center">
+   
+![Thread (3)](https://github.com/JeffersonGibin/thread-tasker/assets/6215779/c3322b7f-f62a-41ca-8483-969087a2255a)
+
+
 
 [![npm](https://img.shields.io/npm/v/thread-tasker.svg)](https://www.npmjs.com/package/thread-tasker 'View this project on NPM')
 [![npm download count](https://img.shields.io/npm/dm/thread-tasker)](https://www.npmjs.com/package/thread-tasker)
 [![MIT License](https://img.shields.io/npm/l/thread-tasker.svg)](#license)
 
 </div>
+
+
+# Thread Tasker
 
 Simplify your asynchronous task handling with ease. Effortlessly manage multi-threaded task execution for enhanced performance and scalability.
 
