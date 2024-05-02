@@ -1,7 +1,7 @@
 {
   "name": "thread-tasker",
   "author": "Jefferson Gibin",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "Provides an easy-to-use middleware for rate-limiting requests to an Express server",
   "main": "lib/index.js",
   "module": "lib/index.m.js",
