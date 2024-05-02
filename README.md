@@ -204,8 +204,8 @@ Here are all the supported events.
 | `pending`     | Indicates that the task is pending execution.                                                                             |
 | `failure`        | Indicates that the task failed during execution.                                                                          |
 | `completed`   | Indicates that the task has been successfully completed.                                                                 |
-| `in_progress` | Indicates that the task is currently in progress, meaning it's being executed at the moment.                              |
-| `retry_error` | Indicates that an error occurred during the retry attempt of the task. Typically occurs after multiple execution failures. |
+| `inprogress` | Indicates that the task is currently in progress, meaning it's being executed at the moment.                              |
+| `retryerror` | Indicates that an error occurred during the retry attempt of the task. Typically occurs after multiple execution failures. |
 | `error`       | Indicates a general error occurred during task execution.                                                                 |
 
 ## Issues and Contributing
