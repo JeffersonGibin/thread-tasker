@@ -76,7 +76,7 @@ const worker = {
       if (error) {
         parentPort.postMessage({
           id,
-          status: "fail",
+          status: "failure",
           emitedAt: new Date(),
           error,
         });

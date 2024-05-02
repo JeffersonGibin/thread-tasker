@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-export type EventType = "pending" | "fail" | "completed" | "inprogress" | "retryerror" | "error";
+export type EventType = "pending" | "failure" | "completed" | "inprogress" | "retryerror" | "error";
 
-export type TaskStatus = "pending" | "fail" | "completed" | "in_progress" | "retry_error" | "error";
+export type TaskStatus = "pending" | "failure" | "completed" | "in_progress" | "retry_error" | "error";
 export type WorkerStatus = "busy" | "idle" | "error";
 
 export interface IDataEvent {

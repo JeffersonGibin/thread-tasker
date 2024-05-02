@@ -45,11 +45,12 @@ export class WorkerManager extends WorkerPool {
   }
 
   private emitEvent(message: IDataEvent, workerId: string, task: ITaskerQueue) {
-    if (["completed", "fail", "retry_error"].includes(message.status) && message.id === task.id) {
+    if (["completed", "failure", "retry_error"].includes(message.status) && message.id === task.id) {
       this.updateState(workerId, "idle");
     }
 
     const eventType = statusToEventMapper(message.status);
+
     eventEmitter.emit(eventType, {
       ...message,
       workerId,
