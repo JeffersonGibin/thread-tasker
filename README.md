@@ -169,7 +169,7 @@ Here are all the supported configurations.
 | `maxWorkers`        | Maximum number of workers that can be executed simultaneously.                                 | number   | 1       |
 | `retry`             | Object containing settings for retrying tasks that failed during execution.                    | object   | -       |
 | `retry.maxAttempt`  | Maximum number of retry attempts for a task that failed.                                        | number   | 3       |
-| `retry.timeout`     | Time in milliseconds to wait between retry attempts.                                             | number   | 10000   |
+| `retry.timeout`     | Time in milliseconds to wait between retry attempts.                                             | number   | 1000   |
 | `fetchTasksInterval`| Interval between attempts to fetch new tasks from the queue, in milliseconds.          fail         | number   | 1000    |
 
 
