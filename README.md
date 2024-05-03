@@ -128,7 +128,7 @@ threadTasker.on("failure", (data) => {
   // Output Event
   // {
   //   id: '581c4bdb-baeb-4a20-bc86-e1628170c1e1',
-  //   status: 'fail',
+  //   status: 'failure',
   //   emitedAt: 2024-05-02T20:08:26.333Z,
   //   error: 'Failed to execute function after maximum attempts',
   //   workerId: '1'
