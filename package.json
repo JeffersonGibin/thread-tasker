@@ -2,7 +2,7 @@
   "name": "thread-tasker",
   "author": "Jefferson Gibin",
   "version": "1.0.0",
-  "description": "Provides an easy-to-use middleware for rate-limiting requests to an Express server",
+  "description": "Simplify your asynchronous task handling with ease. Effortlessly manage multi-threaded task execution for enhanced performance and scalability.",
   "main": "lib/index.js",
   "module": "lib/index.m.js",
   "unpkg": "lib/index.umd.js",
