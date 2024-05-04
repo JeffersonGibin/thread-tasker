@@ -37,7 +37,7 @@ export class TaskerQueue {
    * Adds an item to the end of the queue.
    * @param item - The item to be added to the queue.
    */
-  public enqueue(item): void {
+  public enqueue(item: ITaskerQueue): void {
     this.items.push(item);
   }
 
@@ -46,9 +46,6 @@ export class TaskerQueue {
    * @returns The first item in the queue, or null if the queue is empty.
    */
   public dequeue(): ITaskerQueue | null {
-    if (this.isEmpty()) {
-      return null;
-    }
     return this.items.shift();
   }
 
@@ -73,7 +70,7 @@ export class TaskerQueue {
    * @returns The item from the queue with the specified ID, or undefined if not found.
    */
   public getItemById(id: string): ITaskerQueue | null {
-    return this.items.find((item) => item.id === id);
+    return this.items.find((item) => item.id === id) ?? null;
   }
 
   /**
@@ -91,5 +88,15 @@ export class TaskerQueue {
     }
 
     return false;
+  }
+
+  public clear(): boolean {
+    if (this.isEmpty) {
+      return false;
+    } else {
+      this.items = [];
+
+      return true;
+    }
   }
 }

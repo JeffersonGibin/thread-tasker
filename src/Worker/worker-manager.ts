@@ -29,7 +29,7 @@ export class WorkerManager extends WorkerPool {
     worker.removeAllListeners("exit");
   }
 
-  async sendMessageToWorker(availableWorker: IWorkerPool, task: ITaskerQueue) {
+  public async sendMessageToWorker(availableWorker: IWorkerPool, task: ITaskerQueue) {
     const workerId = availableWorker.id;
     this.updateState(workerId, "busy");
     availableWorker.worker.postMessage({ ...task });

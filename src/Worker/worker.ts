@@ -2,14 +2,9 @@
 import { IDataEvent, ISettings } from "../types";
 import { parentPort, workerData } from "worker_threads";
 import { DEFAULT_MAX_RETRY_ATTEMPTS, DEFAULT_TIMEOUT_RETRY_SLEEP } from "../Utils/constants";
+import { sleep } from "../Utils/sleep.utils";
 
 const settings = workerData as ISettings;
-
-const sleep = (milliseconds: number): Promise<void> => {
-  return new Promise((resolve) => {
-    setTimeout(resolve, milliseconds);
-  });
-};
 
 const retryFunction = async (fn: (args: any) => Promise<any>, taskId: string): Promise<any> => {
   let attempt = 0;

@@ -4,7 +4,7 @@ import { queue, eventEmitter } from "../memory-instance";
 
 export class TaskManager {
   public add(name: string, fn: (id: string) => Promise<any>) {
-    if (typeof fn === undefined) {
+    if (typeof fn === "undefined") {
       throw new Error("callback required to registry task");
     }
 
@@ -20,7 +20,8 @@ export class TaskManager {
     };
 
     queue.enqueue({
-      ...params,
+      emitedAt: params.emitedAt,
+      id: params.id,
       fn: fn.toString(),
     });
 
