@@ -15,7 +15,7 @@
 
 # Thread Tasker
 
-Simplify your asynchronous task handling with ease. Effortlessly manage multi-threaded task execution for enhanced performance and scalability.
+Simplify handling asynchronous tasks with ease. Easily manage task execution with Worker Threds.
 
 
 ## Install
