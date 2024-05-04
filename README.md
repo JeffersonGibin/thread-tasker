@@ -3,8 +3,8 @@
 <div align="center">
 
 
-![Thread-Tasker](https://github.com/JeffersonGibin/thread-tasker/assets/6215779/e9d923b1-6d36-4d3e-81ff-150cca451f0e)
 
+![Thread (5)](https://github.com/JeffersonGibin/thread-tasker/assets/6215779/09d66d9a-bf8c-4566-bf29-c4e6a22b1704)
 
 
 [![npm](https://img.shields.io/npm/v/thread-tasker.svg)](https://www.npmjs.com/package/thread-tasker 'View this project on NPM')
