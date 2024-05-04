@@ -1,14 +1,13 @@
 import { EventType, TaskStatus } from "../types";
 
 export const statusToEventMapper = (taskStatus: TaskStatus): EventType => {
-  const events: Record<TaskStatus, EventType> = {
-    pending: "pending",
-    failure: "failure",
-    completed: "completed",
-    in_progress: "inprogress",
-    retry_error: "retryerror",
-    error: "error",
-  };
+  if (taskStatus === "retry_error") {
+    return "retryerror";
+  }
 
-  return events[taskStatus] || "error";
+  if (taskStatus === "in_progress") {
+    return "inprogress";
+  }
+
+  return taskStatus;
 };

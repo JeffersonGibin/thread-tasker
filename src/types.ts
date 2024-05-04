@@ -45,12 +45,12 @@ export interface ITaskerQueue {
   /**
    * Date and time when the task was emitted/created.
    */
-  emitedAt: string;
+  emitedAt: Date;
 
   /**
    * Function representing the task to be executed.
    */
-  fn: (id: string) => Promise<void>;
+  fn: string;
 }
 
 export interface ThreadTaskerOutput {

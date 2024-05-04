@@ -1,8 +1,9 @@
 
 
 <div align="center">
-   
-![Thread (3)](https://github.com/JeffersonGibin/thread-tasker/assets/6215779/c3322b7f-f62a-41ca-8483-969087a2255a)
+
+
+![Thread-Tasker](https://github.com/JeffersonGibin/thread-tasker/assets/6215779/e9d923b1-6d36-4d3e-81ff-150cca451f0e)
 
 
 
@@ -15,7 +16,7 @@
 
 # Thread Tasker
 
-Simplify your asynchronous task handling with ease. Effortlessly manage multi-threaded task execution for enhanced performance and scalability.
+Simplify handling asynchronous tasks with ease. Easily manage task execution with Worker Threds.
 
 
 ## Install
@@ -115,7 +116,8 @@ threadTasker.on("completed", (data) => {
   //   id: 'fab31e30-4c7e-41bb-a230-437867c4db63',
   //   status: 'completed',
   //   emitedAt: 2024-05-02T19:55:39.501Z,
-  //   result: undefined,
+  // When your task return a value you can receive value here
+  //   result: 1000000000, 
   //   workerId: '1'
   // }
 
