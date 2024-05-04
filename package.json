@@ -1,7 +1,7 @@
 {
   "name": "thread-tasker",
   "author": "Jefferson Gibin",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Simplify handling asynchronous tasks with ease. Easily manage task execution with Worker Threds.",
   "main": "lib/index.js",
   "module": "lib/index.m.js",
@@ -35,7 +35,7 @@
     "efficiency",
     "task execution",
     "thread management"
-],
+  ],
   "license": "MIT",
   "dependencies": {
     "uuid": "^9.0.1"
