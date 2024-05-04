@@ -23,7 +23,7 @@ Simplify your asynchronous task handling with ease. Effortlessly manage multi-th
 To install `thread-tasker`, just run the following command:
 
 ```shell
-npm thread-tasker
+npm run thread-tasker
 ```
 
 ## Exemples
